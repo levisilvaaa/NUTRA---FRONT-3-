@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sua Página Protegida</title>
+    
+    <!-- SISTEMA DE PROTEÇÃO - APENAS PÁGINA INICIAL -->
+    <script src="protection.js"></script>
+    
+    <!-- OU cole o conteúdo do protection.js diretamente aqui dentro de uma tag <script> -->
+    
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            line-height: 1.6;
+        }
+        .protection-info {
+            background: #f0f8ff;
+            border: 1px solid #0066cc;
+            border-radius: 8px;
+            padding: 15px;
+            margin: 20px 0;
+        }
+        .config-section {
+            background: #fff3cd;
+            border: 1px solid #ffc107;
+            border-radius: 8px;
+            padding: 15px;
+            margin: 20px 0;
+        }
+    </style>
+</head>
+<body>
+    <h1>🛡️ Sistema de Proteção Ativo</h1>
+    
+    <div class="protection-info">
+        <h2>✅ Proteção Funcionando</h2>
+        <p>Este sistema de proteção está ativo <strong>APENAS nesta página inicial</strong>.</p>
+        <p>Outras páginas do seu site (como /contato, /produtos, etc.) não serão afetadas.</p>
+    </div>
+
+    <div class="config-section">
+        <h2>⚙️ Configurações</h2>
+        <p>Para personalizar o sistema, edite as seguintes variáveis no arquivo <code>protection.js</code>:</p>
+        <ul>
+            <li><strong>redirectUrl:</strong> URL para onde usuários bloqueados serão redirecionados</li>
+            <li><strong>enableDebugLogs:</strong> true/false para ativar logs de depuração</li>
+            <li><strong>allowedCloakerDomains:</strong> domínios de cloaker permitidos</li>
+            <li><strong>mySuccessPageUrl:</strong> URL para usuários que passarem nas verificações</li>
+        </ul>
+    </div>
+
+    <h2>🔍 Como Funciona</h2>
+    <p>O sistema verifica automaticamente:</p>
+    <ul>
+        <li>✅ Se está na página inicial (/) - <strong>OBRIGATÓRIO</strong></li>
+        <li>✅ Presença de parâmetros UTM obrigatórios</li>
+        <li>✅ Acesso apenas via dispositivos móveis</li>
+        <li>✅ Timezone dos EUA</li>
+        <li>✅ Geolocalização dos EUA (via múltiplas APIs)</li>
+        <li>✅ Idioma em inglês</li>
+        <li>✅ Referrer não-brasileiro (com exceções para cloakers)</li>
+        <li>❌ Bloqueia DevTools abertos</li>
+    </ul>
+
+    <h2>🧪 Testando</h2>
+    <p>Para testar se a proteção está funcionando:</p>
+    <ol>
+        <li>Acesse esta página sem parâmetros UTM - deve ser bloqueado</li>
+        <li>Acesse com parâmetros: <code>?utm_source=test&utm_medium=test&utm_campaign=test</code></li>
+        <li>Teste em desktop vs mobile</li>
+        <li>Abra o DevTools (F12) - deve ser bloqueado</li>
+    </ol>
+
+    <h2>📱 Outras Páginas</h2>
+    <p>Crie links para testar que outras páginas não são protegidas:</p>
+    <ul>
+        <li><a href="/contato">Página de Contato</a> (não protegida)</li>
+        <li><a href="/produtos">Página de Produtos</a> (não protegida)</li>
+        <li><a href="/sobre">Página Sobre</a> (não protegida)</li>
+        <li><a href="/analytics">Analytics Dashboard</a> (não protegida)</li>
+        <li><a href="/1-bottle/upsell-1">Upsell 1</a> (não protegida)</li>
+        <li><a href="/qualquer-slug">Qualquer Slug</a> (não protegida)</li>
+    </ul>
+
+    <script>
+        // Script adicional para mostrar status da proteção
+        window.addEventListener('load', () => {
+            setTimeout(() => {
+                if (window.brazilProtection) {
+                    const status = document.createElement('div');
+                    status.className = 'protection-info';
+                    status.innerHTML = `
+                        <h3>📊 Status da Proteção</h3>
+                        <p><strong>Verificação Completa:</strong> ${window.brazilProtection.isVerificationComplete() ? 'Sim' : 'Não'}</p>
+                        <p><strong>Acesso Liberado:</strong> ${window.brazilProtection.isAccessGranted() ? 'Sim' : 'Não'}</p>
+                        <p><strong>Página Atual:</strong> ${window.location.pathname}</p>
+                        <p><strong>É Página Inicial:</strong> ${window.location.pathname === '/' ? 'Sim' : 'Não'}</p>
+                    `;
+                    document.body.appendChild(status);
+                }
+            }, 1000);
+        });
+    </script>
+</body>
+</html>
