@@ -38,11 +38,7 @@ const DTCOffer = () => {
   };
 
   useEffect(() => {
-    const timer = setTimeout(() => {
-      setIsVisible(true);
-    }, 2655000);
-
-    return () => clearTimeout(timer);
+    setIsVisible(true);
   }, []);
 
   useEffect(() => {
