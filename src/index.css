@@ -58,6 +58,11 @@ img {
   }
 }
 
+/* Faster animation */
+.news-ticker-content {
+  animation: scroll-left 15s linear infinite;
+}
+
 /* Duplicate content for seamless loop */
 .news-ticker-content span {
   padding: 0 1.5rem;

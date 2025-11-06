@@ -194,7 +194,7 @@ function App() {
     <div className="fixed top-0 left-0 right-0 z-50">
       {/* First Header - Men's Sexual Health */}
       <div style={{ backgroundColor: '#a70100' }} className="py-2">
-        <h1 className="text-white text-center text-xl md:text-2xl font-bold">
+        <h1 className="text-white text-center font-serif font-bold" style={{ fontSize: '32px' }}>
           Men's Sexual Health
         </h1>
       </div>
@@ -203,16 +203,16 @@ function App() {
       <div style={{ backgroundColor: '#8b0100' }} className="overflow-hidden py-1.5">
         <div className="news-ticker">
           <div className="news-ticker-content">
-            <span className="text-white text-sm md:text-base font-semibold whitespace-nowrap">
+            <span className="text-white text-sm md:text-base font-bold whitespace-nowrap">
               BREAKING NEWS - NEW DISCOVERIES - DAILY UPDATES
             </span>
-            <span className="text-white text-sm md:text-base font-semibold whitespace-nowrap">
+            <span className="text-white text-sm md:text-base font-bold whitespace-nowrap">
               •
             </span>
-            <span className="text-white text-sm md:text-base font-semibold whitespace-nowrap">
+            <span className="text-white text-sm md:text-base font-bold whitespace-nowrap">
               BREAKING NEWS - NEW DISCOVERIES - DAILY UPDATES
             </span>
-            <span className="text-white text-sm md:text-base font-semibold whitespace-nowrap">
+            <span className="text-white text-sm md:text-base font-bold whitespace-nowrap">
               •
             </span>
           </div>
