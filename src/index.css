@@ -36,34 +36,33 @@ img {
   }
 }
 
-/* News ticker animation */
+/* News ticker animation - seamless infinite loop */
 .news-ticker {
   display: flex;
   width: 100%;
+  overflow: hidden;
 }
 
 .news-ticker-content {
   display: flex;
   gap: 3rem;
   align-items: center;
-  animation: scroll-left 20s linear infinite;
+  white-space: nowrap;
+  will-change: transform;
+  animation: scroll-left 10s linear infinite;
 }
 
 @keyframes scroll-left {
-  0% {
+  from {
     transform: translateX(0);
   }
-  100% {
+  to {
     transform: translateX(-50%);
   }
-}
-
-/* Faster animation */
-.news-ticker-content {
-  animation: scroll-left 10s linear infinite;
 }
 
 /* Duplicate content for seamless loop */
 .news-ticker-content span {
   padding: 0 1.5rem;
+  flex-shrink: 0;
 }

@@ -204,28 +204,22 @@ function App() {
         <div className="news-ticker">
           <div className="news-ticker-content">
             <span className="text-white font-bold font-sans whitespace-nowrap" style={{ fontSize: '17px' }}>
-              BREAKING NEWS - NEW DISCOVERIES - DAILY UPDATES
+              BREAKING NEWS - NEW DISCOVERIES - DAILY UPDATES •
             </span>
             <span className="text-white font-bold font-sans whitespace-nowrap" style={{ fontSize: '17px' }}>
-              •
+              BREAKING NEWS - NEW DISCOVERIES - DAILY UPDATES •
             </span>
             <span className="text-white font-bold font-sans whitespace-nowrap" style={{ fontSize: '17px' }}>
-              BREAKING NEWS - NEW DISCOVERIES - DAILY UPDATES
+              BREAKING NEWS - NEW DISCOVERIES - DAILY UPDATES •
             </span>
             <span className="text-white font-bold font-sans whitespace-nowrap" style={{ fontSize: '17px' }}>
-              •
+              BREAKING NEWS - NEW DISCOVERIES - DAILY UPDATES •
             </span>
             <span className="text-white font-bold font-sans whitespace-nowrap" style={{ fontSize: '17px' }}>
-              BREAKING NEWS - NEW DISCOVERIES - DAILY UPDATES
+              BREAKING NEWS - NEW DISCOVERIES - DAILY UPDATES •
             </span>
             <span className="text-white font-bold font-sans whitespace-nowrap" style={{ fontSize: '17px' }}>
-              •
-            </span>
-            <span className="text-white font-bold font-sans whitespace-nowrap" style={{ fontSize: '17px' }}>
-              BREAKING NEWS - NEW DISCOVERIES - DAILY UPDATES
-            </span>
-            <span className="text-white font-bold font-sans whitespace-nowrap" style={{ fontSize: '17px' }}>
-              •
+              BREAKING NEWS - NEW DISCOVERIES - DAILY UPDATES •
             </span>
           </div>
         </div>
