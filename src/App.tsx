@@ -190,8 +190,8 @@ function App() {
         </script>
       </Helmet>
 
-    {/* Fixed Header */}
-    <div className="fixed top-0 left-0 right-0 z-50">
+    {/* Header */}
+    <div>
       {/* First Header - Men's Sexual Health */}
       <div style={{ backgroundColor: '#a70100' }} className="py-2">
         <h1 className="text-white text-center font-serif font-bold" style={{ fontSize: '28px' }}>
@@ -232,7 +232,7 @@ function App() {
       </div>
     </div>
 
-    <div className="min-h-screen bg-white flex items-center justify-center p-4 overflow-x-hidden" style={{ paddingTop: '120px' }}>
+    <div className="min-h-screen bg-white flex items-center justify-center p-4 overflow-x-hidden">
       <div className="flex flex-col items-center max-w-md w-full">
         
         {/* Headline Section */}
