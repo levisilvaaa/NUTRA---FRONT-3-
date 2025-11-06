@@ -41,15 +41,17 @@ img {
   display: flex;
   width: 100%;
   overflow: hidden;
+  position: relative;
 }
 
 .news-ticker-content {
-  display: flex;
-  gap: 3rem;
+  display: inline-flex;
+  gap: 2rem;
   align-items: center;
   white-space: nowrap;
   will-change: transform;
-  animation: scroll-left 10s linear infinite;
+  animation: scroll-left 20s linear infinite;
+  min-width: max-content;
 }
 
 @keyframes scroll-left {
@@ -63,6 +65,7 @@ img {
 
 /* Duplicate content for seamless loop */
 .news-ticker-content span {
-  padding: 0 1.5rem;
+  padding: 0 1rem;
   flex-shrink: 0;
+  display: inline-block;
 }
