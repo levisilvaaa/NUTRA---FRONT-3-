@@ -215,6 +215,18 @@ function App() {
             <span className="text-white font-bold font-sans whitespace-nowrap" style={{ fontSize: '17px' }}>
               •
             </span>
+            <span className="text-white font-bold font-sans whitespace-nowrap" style={{ fontSize: '17px' }}>
+              BREAKING NEWS - NEW DISCOVERIES - DAILY UPDATES
+            </span>
+            <span className="text-white font-bold font-sans whitespace-nowrap" style={{ fontSize: '17px' }}>
+              •
+            </span>
+            <span className="text-white font-bold font-sans whitespace-nowrap" style={{ fontSize: '17px' }}>
+              BREAKING NEWS - NEW DISCOVERIES - DAILY UPDATES
+            </span>
+            <span className="text-white font-bold font-sans whitespace-nowrap" style={{ fontSize: '17px' }}>
+              •
+            </span>
           </div>
         </div>
       </div>

@@ -60,7 +60,7 @@ img {
 
 /* Faster animation */
 .news-ticker-content {
-  animation: scroll-left 15s linear infinite;
+  animation: scroll-left 10s linear infinite;
 }
 
 /* Duplicate content for seamless loop */
