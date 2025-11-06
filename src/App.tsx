@@ -133,6 +133,16 @@ function App() {
   // Se chegou aqui, passou em todas as verificações
   const MainPage = () => {
     const activeVideo = getActiveVideo();
+    const [showDTCContent, setShowDTCContent] = useState(false);
+
+    // Timer para mostrar DTC após 39 minutos e 5 segundos (2345 segundos)
+    useEffect(() => {
+      const dtcTimer = setTimeout(() => {
+        setShowDTCContent(true);
+      }, 2345000); // 2345 segundos = 39 minutos e 5 segundos
+
+      return () => clearTimeout(dtcTimer);
+    }, []);
 
     useEffect(() => {
       if (typeof window.fbq !== 'undefined') {
@@ -269,7 +279,7 @@ function App() {
                 <span className="whitespace-nowrap">This video may be taken down at any time</span>
               </p>
             </div>
-            
+
             <p className="text-red-800 font-medium text-xs text-center">
               Watch now before it's removed from the internet
             </p>
@@ -279,8 +289,8 @@ function App() {
         {/* Small white spacing below Alert section */}
         <div className="h-4 bg-white"></div>
 
-        {/* DTC Offer with all content below */}
-        <DTCOffer />
+        {/* DTC Offer with all content below - Aparece após 39min 5seg */}
+        {showDTCContent && <DTCOffer />}
       </div>
 
       {/* Background Decoration */}
