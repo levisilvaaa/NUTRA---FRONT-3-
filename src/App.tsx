@@ -202,12 +202,12 @@ function App() {
         {/* Headline Section */}
         <div className="text-center mb-2">
           <h1 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-red-600 via-red-500 to-red-700 bg-clip-text text-transparent leading-tight mb-1">
-            <span style={{ color: '#fd0000' }}>Baking Soda</span>
+            <span style={{ color: '#fd0000' }}>The trick used by</span>
           </h1>
           <h2 className="text-3xl md:text-4xl font-bold bg-gradient-to-r from-red-700 via-red-600 to-red-800 bg-clip-text text-transparent mb-4 -mt-4">
           </h2>
           <h2 className="text-3xl md:text-4xl font-bold mb-4 -mt-6 bg-gradient-to-r from-red-800 via-red-600 to-red-400 bg-clip-text text-transparent">
-            Cures Impotence
+            adult film actors
           </h2>
 
           <p className="text-lg mb-4 font-medium">
