@@ -238,7 +238,7 @@ function App() {
         {/* Headline Section */}
         <div className="text-center mb-2">
           <img
-            src="/HEADLINE.png"
+            src="/HEADLINE2.png"
             alt="Headline"
             className="w-full max-w-md mx-auto mb-4"
           />
