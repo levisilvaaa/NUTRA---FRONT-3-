@@ -237,22 +237,11 @@ function App() {
         
         {/* Headline Section */}
         <div className="text-center mb-2">
-          <h1 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-red-600 via-red-500 to-red-700 bg-clip-text text-transparent leading-tight mb-1">
-            <span style={{ color: '#fd0000' }}>The trick used by</span>
-          </h1>
-          <h2 className="text-3xl md:text-4xl font-bold bg-gradient-to-r from-red-700 via-red-600 to-red-800 bg-clip-text text-transparent mb-4 -mt-4">
-          </h2>
-          <h2 className="text-3xl md:text-4xl font-bold mb-4 -mt-6 bg-gradient-to-r from-red-800 via-red-600 to-red-400 bg-clip-text text-transparent">
-            adult film actors
-          </h2>
-
-          <p className="text-lg mb-4 font-medium">
-            <span className="text-black">How this </span>
-            <span className="bg-gradient-to-r from-emerald-500 via-green-500 to-emerald-600 bg-clip-text text-transparent font-black text-xl">
-              baking soda trick
-            </span>
-            <span className="text-black"> produces rock-hard erections instantly?</span>
-          </p>
+          <img
+            src="/HEADLINE.png"
+            alt="Headline"
+            className="w-full max-w-md mx-auto mb-4"
+          />
 
           <div className="flex items-center justify-center space-x-3 mb-3">
             <div className="bg-red-600 rounded-full p-2">
