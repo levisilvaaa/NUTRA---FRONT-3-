@@ -6,7 +6,6 @@ import { Play, Volume2, Maximize2, AlertTriangle } from 'lucide-react';
 import DTCOffer from './components/DTCOffer';
 import { getActiveVideo } from './config/videoConfig';
 import { useVturbPlayer } from './hooks/useVturbPlayer';
-import Copyright from './components/Copyright';
 import Analytics from './pages/Analytics';
 import DevNavigation from './components/DevNavigation';
 import TestingPanel from './components/TestingPanel';
@@ -282,13 +281,6 @@ function App() {
 
         {/* DTC Offer with all content below */}
         <DTCOffer />
-
-        {/* White space above Copyright - Increased */}
-        <div className="h-8 bg-white"></div>
-        <div className="h-8 bg-white"></div>
-
-        {/* Copyright Section */}
-        <Copyright />
       </div>
 
       {/* Background Decoration */}
