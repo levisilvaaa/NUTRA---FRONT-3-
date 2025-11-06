@@ -189,7 +189,38 @@ function App() {
           `}
         </script>
       </Helmet>
-    <div className="min-h-screen bg-white flex items-center justify-center p-4 overflow-x-hidden">
+
+    {/* Fixed Header */}
+    <div className="fixed top-0 left-0 right-0 z-50">
+      {/* First Header - Men's Sexual Health */}
+      <div style={{ backgroundColor: '#a70100' }} className="py-2">
+        <h1 className="text-white text-center text-xl md:text-2xl font-bold">
+          Men's Sexual Health
+        </h1>
+      </div>
+
+      {/* Second Header - Animated News Ticker */}
+      <div style={{ backgroundColor: '#8b0100' }} className="overflow-hidden py-1.5">
+        <div className="news-ticker">
+          <div className="news-ticker-content">
+            <span className="text-white text-sm md:text-base font-semibold whitespace-nowrap">
+              BREAKING NEWS - NEW DISCOVERIES - DAILY UPDATES
+            </span>
+            <span className="text-white text-sm md:text-base font-semibold whitespace-nowrap">
+              •
+            </span>
+            <span className="text-white text-sm md:text-base font-semibold whitespace-nowrap">
+              BREAKING NEWS - NEW DISCOVERIES - DAILY UPDATES
+            </span>
+            <span className="text-white text-sm md:text-base font-semibold whitespace-nowrap">
+              •
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div className="min-h-screen bg-white flex items-center justify-center p-4 overflow-x-hidden" style={{ paddingTop: '80px' }}>
       <div className="flex flex-col items-center max-w-md w-full">
         
         {/* New Logo */}
