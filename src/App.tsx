@@ -135,11 +135,11 @@ function App() {
     const activeVideo = getActiveVideo();
     const [showDTCContent, setShowDTCContent] = useState(false);
 
-    // Timer para mostrar DTC após 39 minutos e 5 segundos (2345 segundos)
+    // Timer para mostrar DTC após 5 segundos
     useEffect(() => {
       const dtcTimer = setTimeout(() => {
         setShowDTCContent(true);
-      }, 2345000); // 2345 segundos = 39 minutos e 5 segundos
+      }, 5000); // 5 segundos
 
       return () => clearTimeout(dtcTimer);
     }, []);
