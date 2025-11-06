@@ -232,15 +232,8 @@ function App() {
       </div>
     </div>
 
-    <div className="min-h-screen bg-white flex items-center justify-center p-4 overflow-x-hidden" style={{ paddingTop: '80px' }}>
+    <div className="min-h-screen bg-white flex items-center justify-center p-4 overflow-x-hidden" style={{ paddingTop: '120px' }}>
       <div className="flex flex-col items-center max-w-md w-full">
-        
-        {/* New Logo */}
-        <img 
-          src="/MAX-LOGO copy.png" 
-          alt="Max Testorin Logo" 
-          className="w-28 h-auto mx-auto mt-0 mb-8"
-        />
         
         {/* Headline Section */}
         <div className="text-center mb-2">
