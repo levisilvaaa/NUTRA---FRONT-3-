@@ -69,7 +69,17 @@ export const commentsData: Comment[] = [
     time: '38 min',
     likes: 21,
     isLiked: false,
-    replies: []
+    replies: [
+      {
+        id: '7-1',
+        author: 'Mark Scott',
+        avatar: 'https://i.postimg.cc/d0w1XFkt/ft8.webp',
+        text: 'This is what I was looking for. Indeed, the remedies no longer had the same effect as before. I\'m going to start this drink from the video today as well 👍',
+        time: '15 min',
+        likes: 0,
+        isLiked: false
+      }
+    ]
   },
   {
     id: '8',
@@ -147,7 +157,44 @@ export const commentsData: Comment[] = [
     time: '11 min',
     likes: 20,
     isLiked: false,
-    replies: []
+    replies: [
+      {
+        id: '12-1',
+        author: 'Maria Edwards',
+        avatar: 'https://i.postimg.cc/BbK4b7Lr/ft16.webp',
+        text: 'My husband just started, we\'re excited. 🫣',
+        time: '9 min',
+        likes: 0,
+        isLiked: false
+      },
+      {
+        id: '12-2',
+        author: 'Vanessa Simmons',
+        avatar: 'https://i.postimg.cc/FFdL090b/ft17.webp',
+        text: 'This is my dream 😅😎',
+        time: '7 min',
+        likes: 0,
+        isLiked: false
+      },
+      {
+        id: '12-3',
+        author: 'Sarah Johnson',
+        avatar: 'https://i.postimg.cc/vmZ1TMYs/ft18.webp',
+        text: 'I already showed it to him, he started 15 days ago and you have no idea how good it is! We\'re in our best phase in 5 years of marriage. Thanks to this recipe 🤭',
+        time: '4 min',
+        likes: 0,
+        isLiked: false
+      },
+      {
+        id: '12-4',
+        author: 'Laura Mitchell',
+        avatar: 'https://i.postimg.cc/jdYLNyxD/ft19.webp',
+        text: 'This is wonderful. It worked a miracle here at home 😍 😏',
+        time: '3 min',
+        likes: 0,
+        isLiked: false
+      }
+    ]
   },
   {
     id: '13',
