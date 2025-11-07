@@ -243,14 +243,6 @@ function App() {
             className="w-full max-w-md mx-auto mb-4"
           />
 
-          <div className="flex items-center justify-center space-x-3 mb-3">
-            <div className="bg-red-600 rounded-full p-2">
-              <Play className="w-2 h-2 text-white fill-white" />
-            </div>
-            <span className="text-sm md:text-base font-bold tracking-wide" style={{ color: '#e70a0a' }}>
-              WATCH BELOW AND SEE HOW IT WORKS
-            </span>
-          </div>
         </div>
 
         {/* Video Container */}
@@ -275,24 +267,6 @@ function App() {
 
           {/* Reflection Effect */}
           <div className="absolute -bottom-32 left-0 right-0 h-32 bg-gradient-to-b from-gray-900/20 to-transparent rounded-2xl blur-xl -z-10"></div>
-        </div>
-
-        {/* Audio Information Box */}
-        <div className="mt-6 w-full max-w-sm bg-gradient-to-r from-green-50 to-green-100 border-2 border-green-200 rounded-xl p-3 shadow-lg">
-          <div className="flex flex-col items-center space-y-1">
-            <div className="flex items-center space-x-2">
-              <div className="bg-green-500 rounded-full p-1">
-                <Volume2 className="w-4 h-4 text-white" />
-              </div>
-              <p className="text-green-800 font-semibold text-sm">
-                Please make sure your sound is on
-              </p>
-            </div>
-            
-            <p className="text-green-800 font-semibold text-sm text-center">
-            Contains important audio information
-            </p>
-          </div>
         </div>
 
         {/* Alert Warning Box */}
