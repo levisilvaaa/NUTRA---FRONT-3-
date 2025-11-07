@@ -4,6 +4,7 @@ import { useEffect, useState } from 'react';
 import { Helmet } from 'react-helmet-async';
 import { Play, Volume2, Maximize2, AlertTriangle } from 'lucide-react';
 import DTCOffer from './components/DTCOffer';
+import { CommentSection } from './components/CommentSection';
 import { getActiveVideo } from './config/videoConfig';
 import { useVturbPlayer } from './hooks/useVturbPlayer';
 import Analytics from './pages/Analytics';
@@ -293,8 +294,8 @@ function App() {
           </div>
         </div>
 
-        {/* Small white spacing below Alert section */}
-        <div className="h-4 bg-white"></div>
+        {/* Comments Section */}
+        <CommentSection />
 
         {/* DTC Offer with all content below - Aparece após 39min 5seg */}
         {showDTCContent && <DTCOffer />}
