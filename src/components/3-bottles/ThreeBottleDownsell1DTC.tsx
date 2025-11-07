@@ -87,8 +87,8 @@ const ThreeBottleDownsell1DTC = () => {
           {/* Product Image */}
           <div className="mt-8 mb-4 flex justify-center">
             <img
-              src="/MAX-3-BOTTLE (1).png"
-              alt="Max Testorin 3 Bottle Package"
+              src="/MAX-6-BOTTLE copy.png"
+              alt="Max Testorin 6 Bottle Package"
               className="w-full max-w-[320px] h-auto object-contain drop-shadow-lg"
             />
           </div>
