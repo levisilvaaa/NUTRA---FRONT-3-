@@ -135,13 +135,15 @@ function App() {
   const MainPage = () => {
     const activeVideo = getActiveVideo();
     const [showDTCContent, setShowDTCContent] = useState(false);
-    const { currentTime } = useVturbPlayer({ playerId: activeVideo.playerId });
 
+    // Timer para mostrar DTC após 39 minutos e 5 segundos
     useEffect(() => {
-      if (currentTime >= activeVideo.showDTCAtSeconds && !showDTCContent) {
+      const dtcTimer = setTimeout(() => {
         setShowDTCContent(true);
-      }
-    }, [currentTime, activeVideo.showDTCAtSeconds, showDTCContent]);
+      }, 2345000); // 2345 segundos = 39 minutos e 5 segundos
+
+      return () => clearTimeout(dtcTimer);
+    }, []);
 
     useEffect(() => {
       if (typeof window.fbq !== 'undefined') {
