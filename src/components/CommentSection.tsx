@@ -55,7 +55,7 @@ export const CommentSection: React.FC = () => {
           const newReply: Reply = {
             id: `${commentId}-${Date.now()}`,
             author: 'You',
-            avatar: 'https://i.pravatar.cc/150?img=68',
+            avatar: 'https://i.postimg.cc/439DzHNp/SEMUSURAIO.png',
             text: replyText,
             time: 'Just now',
             likes: 0,
