@@ -243,6 +243,14 @@ function App() {
             className="w-full max-w-md mx-auto mb-4"
           />
 
+          <div className="flex items-center justify-center space-x-3 mb-3">
+            <div className="bg-red-600 rounded-full p-2">
+              <Play className="w-2 h-2 text-white fill-white" />
+            </div>
+            <span className="text-sm md:text-base font-bold tracking-wide" style={{ color: '#e70a0a' }}>
+              WATCH BELOW AND SEE HOW IT WORKS
+            </span>
+          </div>
         </div>
 
         {/* Video Container */}
