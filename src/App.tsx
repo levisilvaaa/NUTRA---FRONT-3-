@@ -174,7 +174,7 @@ function App() {
         </script>
         <link rel="preload" href={`https://scripts.converteai.net/f5ab9e88-cc1b-4dce-a537-c7de7e019d8b/players/${activeVideo.playerId}/v4/player.js`} as="script" />
         <link rel="preload" href="https://scripts.converteai.net/lib/js/smartplayer-wc/v4/smartplayer.js" as="script" />
-        <link rel="preload" href="https://cdn.converteai.net/f5ab9e88-cc1b-4dce-a537-c7de7e019d8b/690649e5e24c483f7c7a7a34/main.m3u8" as="fetch" />
+        <link rel="preload" href="https://cdn.converteai.net/f5ab9e88-cc1b-4dce-a537-c7de7e019d8b/690d63db68ea9dc4bff7c2e4/main.m3u8" as="fetch" />
         <link rel="dns-prefetch" href="https://cdn.converteai.net" />
         <link rel="dns-prefetch" href="https://scripts.converteai.net" />
         <link rel="dns-prefetch" href="https://images.converteai.net" />
