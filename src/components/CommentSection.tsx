@@ -3,16 +3,9 @@ import { MessageCircle } from 'lucide-react';
 import { Comment } from './Comment';
 import { Comment as CommentType, Reply } from '../types/comment';
 import { commentsData } from '../data/commentsData';
-import { useCommentsDisabledTime } from '../hooks/useCommentsDisabledTime';
-import { useVturbPlayer } from '../hooks/useVturbPlayer';
-import { getActiveVideo } from '../config/videoConfig';
 
 export const CommentSection: React.FC = () => {
   const [comments, setComments] = useState<CommentType[]>(commentsData);
-  const activeVideo = getActiveVideo();
-  const { currentTime } = useVturbPlayer({ playerId: activeVideo.playerId });
-  const { shouldDisableComments } = useCommentsDisabledTime();
-  const commentsDisabled = shouldDisableComments(currentTime);
 
   const handleLike = (id: string) => {
     setComments(prevComments =>
@@ -96,7 +89,6 @@ export const CommentSection: React.FC = () => {
               onLike={handleLike}
               onReply={handleReply}
               onToggleReplyInput={handleToggleReplyInput}
-              disabled={commentsDisabled}
             />
           ))}
         </div>

@@ -8,15 +8,13 @@ interface CommentProps {
   onLike: (id: string) => void;
   onReply: (commentId: string, replyText: string) => void;
   onToggleReplyInput: (id: string) => void;
-  disabled?: boolean;
 }
 
 export const Comment: React.FC<CommentProps> = ({
   comment,
   onLike,
   onReply,
-  onToggleReplyInput,
-  disabled = false
+  onToggleReplyInput
 }) => {
   const [showReplies, setShowReplies] = useState(false);
 
@@ -52,25 +50,17 @@ export const Comment: React.FC<CommentProps> = ({
 
           <div className="flex items-center gap-4 mt-2">
             <button
-              onClick={() => !disabled && onLike(comment.id)}
-              disabled={disabled}
+              onClick={() => onLike(comment.id)}
               className={`text-xs font-semibold transition-colors ${
-                disabled
-                  ? 'text-gray-400 cursor-not-allowed'
-                  : comment.isLiked ? 'text-blue-600' : 'text-blue-600 hover:text-blue-700'
+                comment.isLiked ? 'text-blue-600' : 'text-blue-600 hover:text-blue-700'
               }`}
             >
               like
             </button>
 
             <button
-              onClick={() => !disabled && onToggleReplyInput(comment.id)}
-              disabled={disabled}
-              className={`text-xs font-semibold transition-colors ${
-                disabled
-                  ? 'text-gray-400 cursor-not-allowed'
-                  : 'text-blue-600 hover:text-blue-700'
-              }`}
+              onClick={() => onToggleReplyInput(comment.id)}
+              className="text-xs font-semibold text-blue-600 hover:text-blue-700 transition-colors"
             >
               Comment
             </button>
@@ -99,13 +89,8 @@ export const Comment: React.FC<CommentProps> = ({
           {hasReplies && (
             <>
               <button
-                onClick={() => !disabled && setShowReplies(!showReplies)}
-                disabled={disabled}
-                className={`text-sm font-semibold mt-3 transition-colors ${
-                  disabled
-                    ? 'text-gray-400 cursor-not-allowed'
-                    : 'text-blue-600 hover:text-blue-700'
-                }`}
+                onClick={() => setShowReplies(!showReplies)}
+                className="text-sm font-semibold text-blue-600 hover:text-blue-700 mt-3 transition-colors"
               >
                 {showReplies
                   ? `Hide ${comment.replies.length} ${comment.replies.length === 1 ? 'reply' : 'replies'}`
@@ -120,7 +105,6 @@ export const Comment: React.FC<CommentProps> = ({
                       key={reply.id}
                       reply={reply}
                       onLike={onLike}
-                      disabled={disabled}
                     />
                   ))}
                 </div>
@@ -136,10 +120,9 @@ export const Comment: React.FC<CommentProps> = ({
 interface ReplyCommentProps {
   reply: Reply;
   onLike: (id: string) => void;
-  disabled?: boolean;
 }
 
-const ReplyComment: React.FC<ReplyCommentProps> = ({ reply, onLike, disabled = false }) => {
+const ReplyComment: React.FC<ReplyCommentProps> = ({ reply, onLike }) => {
   return (
     <div className="flex gap-2 ml-2">
       <img
@@ -159,24 +142,16 @@ const ReplyComment: React.FC<ReplyCommentProps> = ({ reply, onLike, disabled = f
 
         <div className="flex items-center gap-4 mt-1">
           <button
-            onClick={() => !disabled && onLike(reply.id)}
-            disabled={disabled}
+            onClick={() => onLike(reply.id)}
             className={`text-xs font-semibold transition-colors ${
-              disabled
-                ? 'text-gray-400 cursor-not-allowed'
-                : reply.isLiked ? 'text-blue-600' : 'text-blue-600 hover:text-blue-700'
+              reply.isLiked ? 'text-blue-600' : 'text-blue-600 hover:text-blue-700'
             }`}
           >
             like
           </button>
 
           <button
-            disabled={disabled}
-            className={`text-xs font-semibold transition-colors ${
-              disabled
-                ? 'text-gray-400 cursor-not-allowed'
-                : 'text-blue-600 hover:text-blue-700'
-            }`}
+            className="text-xs font-semibold text-blue-600 hover:text-blue-700 transition-colors"
           >
             Comment
           </button>
