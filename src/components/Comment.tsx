@@ -86,25 +86,30 @@ export const Comment: React.FC<CommentProps> = ({
             />
           )}
 
-          {hasReplies && !showReplies && (
-            <button
-              onClick={() => setShowReplies(true)}
-              className="text-sm font-semibold text-blue-600 hover:text-blue-700 mt-3 transition-colors"
-            >
-              View {comment.replies.length} {comment.replies.length === 1 ? 'reply' : 'replies'}
-            </button>
-          )}
+          {hasReplies && (
+            <>
+              <button
+                onClick={() => setShowReplies(!showReplies)}
+                className="text-sm font-semibold text-blue-600 hover:text-blue-700 mt-3 transition-colors"
+              >
+                {showReplies
+                  ? `Hide ${comment.replies.length} ${comment.replies.length === 1 ? 'reply' : 'replies'}`
+                  : `View ${comment.replies.length} ${comment.replies.length === 1 ? 'reply' : 'replies'}`
+                }
+              </button>
 
-          {hasReplies && showReplies && (
-            <div className="mt-3 space-y-3">
-              {comment.replies.map((reply) => (
-                <ReplyComment
-                  key={reply.id}
-                  reply={reply}
-                  onLike={onLike}
-                />
-              ))}
-            </div>
+              {showReplies && (
+                <div className="mt-3 space-y-3">
+                  {comment.replies.map((reply) => (
+                    <ReplyComment
+                      key={reply.id}
+                      reply={reply}
+                      onLike={onLike}
+                    />
+                  ))}
+                </div>
+              )}
+            </>
           )}
         </div>
       </div>
