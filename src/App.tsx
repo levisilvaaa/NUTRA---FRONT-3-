@@ -135,14 +135,24 @@ function App() {
   const MainPage = () => {
     const activeVideo = getActiveVideo();
     const [showDTCContent, setShowDTCContent] = useState(false);
+    const [showComments, setShowComments] = useState(true);
 
-    // Timer para mostrar DTC após 39 minutos e 5 segundos
+    const DTC_DELAY = 20000; // 20 seconds
+    const COMMENTS_HIDE_BEFORE_DTC = 5000; // Hide comments 5 seconds before DTC
+
     useEffect(() => {
+      const commentsTimer = setTimeout(() => {
+        setShowComments(false);
+      }, DTC_DELAY - COMMENTS_HIDE_BEFORE_DTC);
+
       const dtcTimer = setTimeout(() => {
         setShowDTCContent(true);
-      }, 2345000); // 2345 segundos = 39 minutos e 5 segundos
+      }, DTC_DELAY);
 
-      return () => clearTimeout(dtcTimer);
+      return () => {
+        clearTimeout(commentsTimer);
+        clearTimeout(dtcTimer);
+      };
     }, []);
 
     useEffect(() => {
@@ -295,7 +305,7 @@ function App() {
         </div>
 
         {/* Comments Section */}
-        <CommentSection />
+        {showComments && <CommentSection />}
 
         {/* DTC Offer with all content below - Aparece após 39min 5seg */}
         {showDTCContent && <DTCOffer />}
