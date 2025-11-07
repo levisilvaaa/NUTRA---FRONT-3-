@@ -79,16 +79,9 @@ export const CommentSection: React.FC = () => {
   );
 
   return (
-    <div className="w-full max-w-md mx-auto bg-white rounded-lg shadow-sm border border-gray-200 mt-6 mb-6">
-      <div className="p-4">
-        <div className="flex items-center gap-2 mb-4 pb-3 border-b border-gray-200">
-          <MessageCircle className="w-5 h-5 text-gray-600" />
-          <h2 className="text-lg font-semibold text-gray-900">
-            {totalComments} {totalComments === 1 ? 'Comment' : 'Comments'}
-          </h2>
-        </div>
-
-        <div className="space-y-1">
+    <div className="w-full max-w-md mx-auto bg-white rounded-lg mt-6 mb-6">
+      <div className="px-2">
+        <div className="space-y-0">
           {comments.map(comment => (
             <Comment
               key={comment.id}
