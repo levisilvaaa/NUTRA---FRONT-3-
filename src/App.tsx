@@ -2,10 +2,11 @@ import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import { Helmet } from 'react-helmet-async';
-import { AlertTriangle } from 'lucide-react';
+import { Play, Volume2, Maximize2, AlertTriangle } from 'lucide-react';
 import DTCOffer from './components/DTCOffer';
 import { CommentSection } from './components/CommentSection';
 import { getActiveVideo } from './config/videoConfig';
+import { useVturbPlayer } from './hooks/useVturbPlayer';
 import Analytics from './pages/Analytics';
 import DevNavigation from './components/DevNavigation';
 import TestingPanel from './components/TestingPanel';
@@ -164,20 +165,6 @@ function App() {
       }
     }, []);
 
-    useEffect(() => {
-      // Load Vturb player script
-      const script = document.createElement('script');
-      script.src = `https://scripts.converteai.net/f5ab9e88-cc1b-4dce-a537-c7de7e019d8b/players/${activeVideo.playerId}/v4/player.js`;
-      script.async = true;
-      document.head.appendChild(script);
-
-      return () => {
-        if (script.parentNode) {
-          script.parentNode.removeChild(script);
-        }
-      };
-    }, [activeVideo.playerId]);
-
     return (
     <>
       <Helmet>
@@ -260,29 +247,49 @@ function App() {
       <div className="flex flex-col items-center max-w-md w-full">
 
         {/* Headline Section */}
-        <div className="text-center mb-6">
+        <div className="text-center mb-2">
           <img
             src="/HEADLINE2.png"
             alt="Headline"
             className="w-full max-w-md mx-auto mb-4"
           />
-        </div>
 
-        {/* Vturb Video Player Container */}
-        <div className="relative w-full max-w-[360px] mb-6">
-          <div
-            id={`vid_${activeVideo.playerId}`}
-            style={{
-              position: 'relative',
-              width: '100%',
-              aspectRatio: '720/1280'
-            }}
-          >
+          <div className="flex items-center justify-center space-x-3 mb-3">
+            <div className="bg-red-600 rounded-full p-2">
+              <Play className="w-2 h-2 text-white fill-white" />
+            </div>
+            <span className="text-sm md:text-base font-bold tracking-wide" style={{ color: '#e70a0a' }}>
+              WATCH BELOW AND SEE HOW IT WORKS
+            </span>
           </div>
         </div>
 
+        {/* Video Container */}
+        <div className="relative bg-gray-900 rounded-2xl shadow-2xl overflow-hidden"
+             style={{
+               width: '100%',
+               maxWidth: '360px',
+               aspectRatio: '720/1280'
+             }}>
+
+          {/* Vturb Video Player */}
+          <div className="relative w-full h-full">
+            <iframe
+              src={activeVideo.embedUrl}
+              className="w-full h-full rounded-2xl"
+              frameBorder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
+              title="Vturb Video Player"
+            />
+          </div>
+
+          {/* Reflection Effect */}
+          <div className="absolute -bottom-32 left-0 right-0 h-32 bg-gradient-to-b from-gray-900/20 to-transparent rounded-2xl blur-xl -z-10"></div>
+        </div>
+
         {/* Alert Warning Box */}
-        <div className="mt-4 w-full max-w-sm bg-gradient-to-r from-red-50 to-red-100 border-2 border-red-200 rounded-xl p-4 shadow-lg mb-6">
+        <div className="mt-4 w-full max-w-sm bg-gradient-to-r from-red-50 to-red-100 border-2 border-red-200 rounded-xl p-4 shadow-lg">
           <div className="flex flex-col items-center space-y-2">
             <div className="flex items-center space-x-2">
               <AlertTriangle className="w-4 h-4 text-red-600" />
