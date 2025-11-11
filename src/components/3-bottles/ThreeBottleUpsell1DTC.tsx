@@ -44,16 +44,21 @@ const ThreeBottleUpsell1DTC = () => {
   };
 
   useEffect(() => {
-    setIsVisible(true);
+    const dtcTimer = setTimeout(() => {
+      setIsVisible(true);
+    }, 320000); // 5 minutos e 20 segundos
 
     const declineTimer = setTimeout(() => {
       setShowDeclineButton(true);
     }, 2000);
 
     return () => {
+      clearTimeout(dtcTimer);
       clearTimeout(declineTimer);
     };
   }, []);
+
+  if (!isVisible) return null;
 
   return (
     <div className="mt-6 w-full max-w-sm space-y-4" id="threebottle-dtc-offers">
