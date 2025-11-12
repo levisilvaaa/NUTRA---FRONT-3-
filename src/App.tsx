@@ -166,16 +166,26 @@ function App() {
     }, []);
 
     useEffect(() => {
-      const script = document.createElement('script');
-      script.src = `https://scripts.converteai.net/f5ab9e88-cc1b-4dce-a537-c7de7e019d8b/players/${activeVideo.playerId}/v4/player.js`;
-      script.async = true;
-      script.id = `vturb-player-${activeVideo.playerId}`;
-      document.body.appendChild(script);
+      const loadPlayer = () => {
+        const script = document.createElement('script');
+        script.src = `https://scripts.converteai.net/f5ab9e88-cc1b-4dce-a537-c7de7e019d8b/players/${activeVideo.playerId}/v4/player.js`;
+        script.async = false;
+        script.id = `vturb-player-${activeVideo.playerId}`;
+
+        script.onload = () => {
+          console.log('Vturb player script loaded');
+        };
+
+        document.head.appendChild(script);
+      };
+
+      const timer = setTimeout(loadPlayer, 100);
 
       return () => {
+        clearTimeout(timer);
         const existingScript = document.getElementById(`vturb-player-${activeVideo.playerId}`);
         if (existingScript) {
-          document.body.removeChild(existingScript);
+          document.head.removeChild(existingScript);
         }
       };
     }, [activeVideo.playerId]);
@@ -290,8 +300,7 @@ function App() {
           {/* Vturb Video Player */}
           <div
             id={`vid_${activeVideo.playerId}`}
-            className="relative w-full h-full"
-            style={{ position: 'relative' }}
+            className="w-full h-full"
           ></div>
 
           {/* Reflection Effect */}
