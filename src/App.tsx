@@ -137,7 +137,7 @@ function App() {
     const [showDTCContent, setShowDTCContent] = useState(false);
     const [showComments, setShowComments] = useState(true);
 
-    const DTC_DELAY = 2270000; // 37 minutes and 50 seconds (2270 seconds)
+    const DTC_DELAY = 10000; // 10 seconds
     const COMMENTS_HIDE_BEFORE_DTC = 5000; // Hide comments 5 seconds before DTC
 
     useEffect(() => {
