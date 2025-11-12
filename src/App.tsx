@@ -272,16 +272,17 @@ function App() {
                aspectRatio: '720/1280'
              }}>
 
-          {/* Video Player */}
-          <video
-            className="w-full h-full rounded-2xl object-cover"
-            controls
-            playsInline
-            preload="metadata"
-          >
-            <source src={activeVideo.embedUrl} type="video/mp4" />
-            Your browser does not support the video tag.
-          </video>
+          {/* Vturb Video Player */}
+          <div className="relative w-full h-full">
+            <iframe
+              src={activeVideo.embedUrl}
+              className="w-full h-full rounded-2xl"
+              frameBorder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
+              title="Vturb Video Player"
+            />
+          </div>
 
           {/* Reflection Effect */}
           <div className="absolute -bottom-32 left-0 right-0 h-32 bg-gradient-to-b from-gray-900/20 to-transparent rounded-2xl blur-xl -z-10"></div>
