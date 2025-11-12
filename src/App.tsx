@@ -265,7 +265,7 @@ function App() {
         </div>
 
         {/* Video Container */}
-        <div className="relative bg-gray-900 rounded-2xl shadow-2xl overflow-hidden"
+        <div className="relative rounded-2xl shadow-2xl overflow-hidden"
              style={{
                width: '100%',
                maxWidth: '360px',
@@ -273,14 +273,11 @@ function App() {
              }}>
 
           {/* Vturb Video Player */}
-          <div className="relative w-full h-full">
-            <iframe
-              src={activeVideo.embedUrl}
-              className="w-full h-full rounded-2xl"
-              frameBorder="0"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowFullScreen
-              title="Vturb Video Player"
+          <div id={`vid_${activeVideo.playerId}`} style={{ position: 'relative', width: '100%', paddingTop: '177.77777777777777%' }}>
+            <script
+              type="text/javascript"
+              id={`scr_${activeVideo.playerId}`}
+              src={`https://scripts.converteai.net/f5ab9e88-cc1b-4dce-a537-c7de7e019d8b/players/${activeVideo.playerId}/v4/player.js`}
             />
           </div>
 
