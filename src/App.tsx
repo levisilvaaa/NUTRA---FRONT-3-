@@ -165,6 +165,21 @@ function App() {
       }
     }, []);
 
+    useEffect(() => {
+      const script = document.createElement('script');
+      script.src = `https://scripts.converteai.net/f5ab9e88-cc1b-4dce-a537-c7de7e019d8b/players/${activeVideo.playerId}/v4/player.js`;
+      script.async = true;
+      script.id = `vturb-player-${activeVideo.playerId}`;
+      document.body.appendChild(script);
+
+      return () => {
+        const existingScript = document.getElementById(`vturb-player-${activeVideo.playerId}`);
+        if (existingScript) {
+          document.body.removeChild(existingScript);
+        }
+      };
+    }, [activeVideo.playerId]);
+
     return (
     <>
       <Helmet>
@@ -273,16 +288,11 @@ function App() {
              }}>
 
           {/* Vturb Video Player */}
-          <div className="relative w-full h-full">
-            <iframe
-              src={activeVideo.embedUrl}
-              className="w-full h-full rounded-2xl"
-              frameBorder="0"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowFullScreen
-              title="Vturb Video Player"
-            />
-          </div>
+          <div
+            id={`vid_${activeVideo.playerId}`}
+            className="relative w-full h-full"
+            style={{ position: 'relative' }}
+          ></div>
 
           {/* Reflection Effect */}
           <div className="absolute -bottom-32 left-0 right-0 h-32 bg-gradient-to-b from-gray-900/20 to-transparent rounded-2xl blur-xl -z-10"></div>
