@@ -289,7 +289,7 @@ function App() {
         </div>
 
         {/* Alert Warning Box */}
-        <div className="mt-4 w-full max-w-sm bg-gradient-to-r from-red-50 to-red-100 border-2 border-red-200 rounded-xl p-4 shadow-lg">
+        <div className="smartplayer-scroll-event mt-4 w-full max-w-sm bg-gradient-to-r from-red-50 to-red-100 border-2 border-red-200 rounded-xl p-4 shadow-lg">
           <div className="flex flex-col items-center space-y-2">
             <div className="flex items-center space-x-2">
               <AlertTriangle className="w-4 h-4 text-red-600" />
